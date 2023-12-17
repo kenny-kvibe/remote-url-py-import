@@ -1,12 +1,12 @@
 import ast
+import importlib.abc
+import importlib.machinery
 import inspect
 import os
 import requests
 import sys
-import importlib.abc
-import importlib.machinery
-import typing
 import types
+import typing
 
 from logger import Logger
 

@@ -1,6 +1,6 @@
+import functools
 import logging
-from functools import singledispatchmethod
-from typing import Any, Callable
+import typing
 
 
 class Logger:
@@ -60,9 +60,9 @@ class Logger:
 		cls._name = str(name)
 		logging.root.name = cls._name
 
-	@singledispatchmethod
+	@functools.singledispatchmethod
 	@classmethod
-	def set_log_level(cls, arg:Any):
+	def set_log_level(cls, arg:typing.Any):
 		""" Argument is `name:str` or `level:int` """
 		raise NotImplementedError(
 			f'Unsupported type "{type(arg).__name__}" for "arg", supported are: int, str')
